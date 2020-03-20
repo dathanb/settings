@@ -1,26 +1,6 @@
-// ************************* WARNING *************************
 //
-// The file contains the default mappings, and it is released un-minified
-// for your referrence on creating your own mappings.
-//
-// But please don't just copy statement from this file to your own settings.
-// As the bound functions in this file may rely on some unstable functions/
-// variables, which may be changed some day. If you insist on that, please
-// compare your settings with this file to find what stops your keystrokes
-// from working.
-//
-// Therefore, the best practice to remap is using map instead of mapkey, for
-// example:
-//
-//      map('F', 'af');
-//
-// is better than
-//
-//      mapkey('F', '#1Open a link in new tab', 'Hints.create("", Hints.dispatchMouseClick, {tabbed: true})');
-//
-// ************************* WARNING *************************
-
-function createDefaultMappings() {
+// You can get the default for reference from the SurfingKeys extension options
+// page at chrome-extension://gfbliohnnapiefjpjlpjnehglfpaknnc/pages/options.html
 
 imapkey("<Ctrl-'>", '#15Toggle quotes in an input element', toggleQuote);
 
@@ -303,6 +283,8 @@ mapkey('D', '#4Go forward in history', function() {
 mapkey('r', '#4Reload the page', function() {
     RUNTIME("reloadTab", { nocache: false });
 });
+unmap('r');
+
 mapkey('t', '#8Open a URL', function() {
     Front.openOmnibar({type: "URLs", extra: "getAllSites"});
 });
@@ -703,7 +685,3 @@ addSearchAliasX('y', 'youtube', 'https://www.youtube.com/results?search_query=',
         return d[0];
     });
 });
-
-}
-
-
